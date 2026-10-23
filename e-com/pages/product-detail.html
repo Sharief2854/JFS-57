@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Detail — ShopEase</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body id="productDetailPage">
+  <div id="navbar-placeholder"></div>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb-wrapper">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0" id="productBreadcrumb">
+          <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="products.html">Products</a></li>
+          <li class="breadcrumb-item active">Loading…</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <div class="container py-5">
+    <div class="row g-5">
+      <!-- Product Images -->
+      <div class="col-lg-5">
+        <div class="product-images">
+          <img id="mainProductImage" src="" alt="" class="main-image">
+          <div class="thumb-images" id="thumbImages"></div>
+        </div>
+      </div>
+
+      <!-- Product Info -->
+      <div class="col-lg-7">
+        <div id="productCategory" class="mb-2"></div>
+        <h1 id="productName" class="fw-800 h2" style="color:var(--dark);"></h1>
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <span id="productRating"></span>
+          <span id="productReviewCount" class="text-muted small"></span>
+        </div>
+
+        <!-- Price -->
+        <div class="d-flex align-items-center gap-3 mb-3 flex-wrap">
+          <span class="product-detail-price" id="productPrice"></span>
+          <span class="product-detail-original" id="productOriginalPrice"></span>
+          <span class="product-detail-discount" id="productDiscount"></span>
+        </div>
+
+        <!-- Stock & Delivery -->
+        <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+          <span id="productStock" class="fw-500"></span>
+          <span class="text-muted small">|</span>
+          <span class="small text-muted"><i class="fas fa-truck me-1"></i>Delivery by <strong id="deliveryDate"></strong></span>
+        </div>
+
+        <!-- Description -->
+        <div class="mb-4 p-3 rounded-3" style="background:var(--gray-100);">
+          <p id="productDescription" class="mb-0 text-secondary" style="font-size:.95rem;"></p>
+        </div>
+
+        <!-- Tags -->
+        <div class="mb-4" id="productTags"></div>
+
+        <!-- Quantity -->
+        <div class="d-flex align-items-center gap-3 mb-4 flex-wrap">
+          <label class="fw-600">Quantity:</label>
+          <div class="qty-control">
+            <button class="qty-btn" onclick="changeDetailQty(-1)">−</button>
+            <input class="qty-input form-control" type="number" id="qtyInput" value="1" min="1" onchange="qtyInputChange(this.value)" style="width:55px;padding:.4rem .3rem;text-align:center;">
+            <button class="qty-btn" onclick="changeDetailQty(1)">+</button>
+          </div>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="d-flex gap-3 flex-wrap mb-4">
+          <button class="btn btn-primary-custom px-5" onclick="detailAddToCart()">
+            <i class="fas fa-cart-plus me-2"></i>Add to Cart
+          </button>
+          <button class="btn btn-outline-custom px-5" onclick="buyNow()">
+            <i class="fas fa-bolt me-2"></i>Buy Now
+          </button>
+          <button class="btn btn-outline-secondary" id="wishlistBtn" onclick="toggleDetailWishlist()">
+            <i class="far fa-heart me-1"></i> Add to Wishlist
+          </button>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="row g-3">
+          <div class="col-4">
+            <div class="text-center p-2 rounded-2 border">
+              <i class="fas fa-shield-alt text-success mb-1 d-block"></i>
+              <div class="small fw-600">Genuine</div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="text-center p-2 rounded-2 border">
+              <i class="fas fa-undo text-primary-custom mb-1 d-block"></i>
+              <div class="small fw-600">30-day Return</div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="text-center p-2 rounded-2 border">
+              <i class="fas fa-headset mb-1 d-block" style="color:var(--secondary);"></i>
+              <div class="small fw-600">24/7 Support</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reviews -->
+    <div class="mt-5">
+      <div class="row g-4">
+        <div class="col-lg-8">
+          <div class="form-card">
+            <h4 class="fw-700 mb-4">Customer Reviews</h4>
+            <div id="reviewsList"></div>
+            <!-- Write Review -->
+            <div class="mt-4 p-3 rounded-3" style="background:var(--gray-100);">
+              <h6 class="fw-700 mb-3">Write a Review</h6>
+              <div class="mb-2">
+                <label class="form-label">Rating</label>
+                <div class="d-flex gap-2 fs-4" id="reviewStarSelect">
+                  <i class="far fa-star cursor-pointer text-warning" data-val="1" onclick="selectReviewStar(1)"></i>
+                  <i class="far fa-star cursor-pointer text-warning" data-val="2" onclick="selectReviewStar(2)"></i>
+                  <i class="far fa-star cursor-pointer text-warning" data-val="3" onclick="selectReviewStar(3)"></i>
+                  <i class="far fa-star cursor-pointer text-warning" data-val="4" onclick="selectReviewStar(4)"></i>
+                  <i class="far fa-star cursor-pointer text-warning" data-val="5" onclick="selectReviewStar(5)"></i>
+                </div>
+              </div>
+              <textarea class="form-control mb-2" rows="3" placeholder="Share your experience…" id="reviewText"></textarea>
+              <button class="btn btn-primary-custom" onclick="submitReview()">Submit Review</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="form-card text-center">
+            <h4 class="fw-700 mb-1">Overall Rating</h4>
+            <div class="display-4 fw-800 text-primary-custom" id="ratingScore">4.5</div>
+            <div id="overallStars" class="fs-4 my-2"></div>
+            <div class="text-muted small" id="totalReviews"></div>
+            <hr>
+            <div id="ratingBars"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related Products -->
+    <section class="mt-5">
+      <h3 class="section-title mb-4">Related Products</h3>
+      <div class="row" id="relatedProducts"></div>
+    </section>
+  </div>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/products.js"></script>
+  <script src="../js/product-detail.js"></script>
+  <script>
+    let selectedReviewStar = 0;
+    function selectReviewStar(val) {
+      selectedReviewStar = val;
+      document.querySelectorAll('#reviewStarSelect i').forEach((star, i) => {
+        star.className = i < val ? 'fas fa-star cursor-pointer text-warning' : 'far fa-star cursor-pointer text-warning';
+      });
+    }
+    function submitReview() {
+      const text = document.getElementById('reviewText').value.trim();
+      if (!selectedReviewStar) { showToast('Please select a rating', 'warning'); return; }
+      if (!text) { showToast('Please write a review', 'warning'); return; }
+      showToast('Thank you for your review! 🎉', 'success');
+      document.getElementById('reviewText').value = '';
+      selectedReviewStar = 0;
+      selectReviewStar(0);
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        const ratingScore = document.getElementById('ratingScore');
+        const score = parseFloat(ratingScore?.textContent || '4.5');
+        const overallStars = document.getElementById('overallStars');
+        if (overallStars) overallStars.innerHTML = renderStars(score);
+        // Render rating bars
+        const bars = document.getElementById('ratingBars');
+        if (bars) {
+          const dist = [45, 30, 15, 7, 3];
+          bars.innerHTML = [5,4,3,2,1].map((s, i) => `
+            <div class="d-flex align-items-center gap-2 mb-1">
+              <span class="small">${s}★</span>
+              <div class="flex-grow-1 bg-light rounded" style="height:8px">
+                <div class="rounded" style="width:${dist[i]}%;height:100%;background:var(--warning)"></div>
+              </div>
+              <span class="small text-muted">${dist[i]}%</span>
+            </div>`).join('');
+        }
+      }, 500);
+    });
+  </script>
+</body>
+</html>

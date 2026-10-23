@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopEase — Shop Smart, Shop Easy</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .shimmer { animation: shimmer 1.5s infinite; background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%); background-size: 200% 100%; }
+    @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+    .hero-slide { height: 520px; position: relative; overflow: hidden; }
+    .hero-slide img { width:100%;height:100%;object-fit:cover; }
+    .hero-overlay { position:absolute;inset:0;background:linear-gradient(to right,rgba(26,26,46,.85) 0%,rgba(26,26,46,.3) 60%,transparent 100%); }
+    .hero-content { position:absolute;top:50%;left:8%;transform:translateY(-50%);max-width:500px;color:#fff; }
+    .hero-content h1 { font-size:2.8rem;font-weight:800;line-height:1.2; }
+    .hero-content p { font-size:1.1rem;opacity:.85;margin:1rem 0 1.5rem; }
+    .stat-card { text-align:center;padding:1.5rem 1rem;background:#fff;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,.06); }
+    .stat-card .stat-num { font-size:2rem;font-weight:800;color:var(--primary); }
+    .stat-card .stat-label { color:var(--gray-600);font-size:.9rem; }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- Hero Carousel -->
+  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+    </div>
+    <div class="carousel-inner">
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1400" alt="Electronics Sale">
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <span class="badge rounded-pill px-3 py-2 mb-3" style="background:var(--secondary);">🔥 Up to 50% OFF</span>
+            <h1>Best Deals on Electronics</h1>
+            <p>Discover the latest gadgets at unbeatable prices. Premium quality, guaranteed.</p>
+            <div class="d-flex gap-3 flex-wrap">
+              <a href="pages/products.html?cat=Electronics" class="btn btn-primary-custom px-4">Shop Now <i class="fas fa-arrow-right ms-1"></i></a>
+              <a href="pages/products.html" class="btn btn-outline-light px-4 rounded-pill">Explore All</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=1400" alt="Fashion Sale">
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <span class="badge rounded-pill px-3 py-2 mb-3" style="background:var(--success);">✨ New Arrivals</span>
+            <h1>Fashion Forward Collection</h1>
+            <p>Trendy styles for every occasion. From casual to formal — look your best.</p>
+            <div class="d-flex gap-3 flex-wrap">
+              <a href="pages/products.html?cat=Clothing" class="btn btn-primary-custom px-4">Shop Fashion <i class="fas fa-arrow-right ms-1"></i></a>
+              <a href="pages/products.html" class="btn btn-outline-light px-4 rounded-pill">View All</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Slide 3 -->
+      <div class="carousel-item">
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1400" alt="Sports Sale">
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <span class="badge rounded-pill px-3 py-2 mb-3" style="background:var(--warning);color:#333;">⚡ Flash Sale</span>
+            <h1>Level Up Your Fitness Game</h1>
+            <p>Premium sports gear and fitness equipment to reach your goals faster.</p>
+            <div class="d-flex gap-3 flex-wrap">
+              <a href="pages/products.html?cat=Sports" class="btn btn-primary-custom px-4">Shop Sports <i class="fas fa-arrow-right ms-1"></i></a>
+              <a href="pages/products.html" class="btn btn-outline-light px-4 rounded-pill">Browse All</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <!-- Stats Bar -->
+  <div class="bg-white py-3 shadow-sm">
+    <div class="container">
+      <div class="row g-3 text-center">
+        <div class="col-6 col-md-3">
+          <div class="d-flex align-items-center justify-content-center gap-2">
+            <i class="fas fa-truck text-primary-custom fs-5"></i>
+            <div class="text-start">
+              <div class="fw-700 small">Free Shipping</div>
+              <div class="text-muted" style="font-size:.75rem;">On orders above ₹999</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="d-flex align-items-center justify-content-center gap-2">
+            <i class="fas fa-undo text-success fs-5"></i>
+            <div class="text-start">
+              <div class="fw-700 small">Easy Returns</div>
+              <div class="text-muted" style="font-size:.75rem;">30-day return policy</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="d-flex align-items-center justify-content-center gap-2">
+            <i class="fas fa-shield-alt text-warning fs-5"></i>
+            <div class="text-start">
+              <div class="fw-700 small">Secure Payment</div>
+              <div class="text-muted" style="font-size:.75rem;">100% safe & secure</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="d-flex align-items-center justify-content-center gap-2">
+            <i class="fas fa-headset" style="color:var(--secondary);font-size:1.25rem;"></i>
+            <div class="text-start">
+              <div class="fw-700 small">24/7 Support</div>
+              <div class="text-muted" style="font-size:.75rem;">Always here to help</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Categories -->
+  <section class="py-5">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="section-title mb-0">Shop by Category</h2>
+        <a href="pages/products.html" class="btn btn-outline-custom">View All <i class="fas fa-arrow-right ms-1"></i></a>
+      </div>
+      <div class="row g-3">
+        <div class="col-6 col-md-4 col-lg-2">
+          <a href="pages/products.html?cat=Electronics" class="text-decoration-none">
+            <div class="category-card">
+              <div class="cat-icon" style="background:#ede7ff;"><span>📱</span></div>
+              <div class="cat-name">Electronics</div>
+              <div class="cat-count">7 Products</div>
+            </div>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <a href="pages/products.html?cat=Clothing" class="text-decoration-none">
+            <div class="category-card">
+              <div class="cat-icon" style="background:#ffeef8;"><span>👗</span></div>
+              <div class="cat-name">Clothing</div>
+              <div class="cat-count">4 Products</div>
+            </div>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <a href="pages/products.html?cat=Books" class="text-decoration-none">
+            <div class="category-card">
+              <div class="cat-icon" style="background:#e8f5e9;"><span>📚</span></div>
+              <div class="cat-name">Books</div>
+              <div class="cat-count">5 Products</div>
+            </div>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <a href="pages/products.html?cat=Home & Kitchen" class="text-decoration-none">
+            <div class="category-card">
+              <div class="cat-icon" style="background:#fff3e0;"><span>🏠</span></div>
+              <div class="cat-name">Home & Kitchen</div>
+              <div class="cat-count">5 Products</div>
+            </div>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <a href="pages/products.html?cat=Sports" class="text-decoration-none">
+            <div class="category-card">
+              <div class="cat-icon" style="background:#e3f2fd;"><span>🏋️</span></div>
+              <div class="cat-name">Sports</div>
+              <div class="cat-count">4 Products</div>
+            </div>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <a href="pages/products.html" class="text-decoration-none">
+            <div class="category-card" style="border:2px dashed var(--primary);">
+              <div class="cat-icon" style="background:var(--primary-light);"><span>🛍️</span></div>
+              <div class="cat-name">All Products</div>
+              <div class="cat-count">24 Products</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products -->
+  <section class="py-4 pb-5" style="background:var(--gray-100);">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="section-title mb-0">Featured Products</h2>
+        <a href="pages/products.html" class="btn btn-outline-custom">See All <i class="fas fa-arrow-right ms-1"></i></a>
+      </div>
+      <div class="row" id="featuredProducts">
+        <!-- Skeleton loaders -->
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
+          <div class="product-card"><div class="card-img-wrapper shimmer" style="height:220px;"></div><div class="card-body"><div class="shimmer rounded mb-2" style="height:12px;width:50%;"></div><div class="shimmer rounded mb-2" style="height:16px;width:85%;"></div><div class="shimmer rounded" style="height:12px;width:40%;"></div></div></div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 mb-4 d-none d-md-block">
+          <div class="product-card"><div class="card-img-wrapper shimmer" style="height:220px;"></div><div class="card-body"><div class="shimmer rounded mb-2" style="height:12px;width:50%;"></div><div class="shimmer rounded mb-2" style="height:16px;width:85%;"></div><div class="shimmer rounded" style="height:12px;width:40%;"></div></div></div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 mb-4 d-none d-lg-block">
+          <div class="product-card"><div class="card-img-wrapper shimmer" style="height:220px;"></div><div class="card-body"><div class="shimmer rounded mb-2" style="height:12px;width:50%;"></div><div class="shimmer rounded mb-2" style="height:16px;width:85%;"></div><div class="shimmer rounded" style="height:12px;width:40%;"></div></div></div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 mb-4 d-none d-lg-block">
+          <div class="product-card"><div class="card-img-wrapper shimmer" style="height:220px;"></div><div class="card-body"><div class="shimmer rounded mb-2" style="height:12px;width:50%;"></div><div class="shimmer rounded mb-2" style="height:16px;width:85%;"></div><div class="shimmer rounded" style="height:12px;width:40%;"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Promo Banner -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="promo-banner h-100">
+            <h2>🎉 Special Offer</h2>
+            <p class="mb-4">Use code <strong>SAVE20</strong> to get 20% off on your first order. Limited time only!</p>
+            <a href="pages/products.html" class="btn bg-white text-primary fw-700 px-4 rounded-pill">Shop Now</a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="promo-banner h-100" style="background:linear-gradient(135deg,#f72585,#b5179e);">
+            <h2>📦 Free Shipping</h2>
+            <p class="mb-4">Enjoy free delivery on all orders above ₹999. No promo code needed!</p>
+            <a href="pages/products.html" class="btn bg-white fw-700 px-4 rounded-pill" style="color:#b5179e;">Explore Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- New Arrivals -->
+  <section class="py-4 pb-5">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="section-title mb-0">New Arrivals</h2>
+        <a href="pages/products.html" class="btn btn-outline-custom">View All <i class="fas fa-arrow-right ms-1"></i></a>
+      </div>
+      <div class="row" id="newArrivals"></div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-5" style="background:var(--primary-light);">
+    <div class="container">
+      <div class="row g-4 text-center">
+        <div class="col-6 col-md-3">
+          <div class="stat-card">
+            <div class="stat-num">50K+</div>
+            <div class="stat-label">Happy Customers</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-card">
+            <div class="stat-num">24</div>
+            <div class="stat-label">Premium Products</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-card">
+            <div class="stat-num">4.8★</div>
+            <div class="stat-label">Average Rating</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-card">
+            <div class="stat-num">24/7</div>
+            <div class="stat-label">Customer Support</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Load featured & new arrival products
+    document.addEventListener('DOMContentLoaded', async () => {
+      const products = await loadProducts();
+
+      const featured = products.filter(p => p.featured).slice(0, 8);
+      document.getElementById('featuredProducts').innerHTML = featured.map(p => buildProductCard(p)).join('');
+
+      const newArr = products.filter(p => p.isNew).slice(0, 4);
+      document.getElementById('newArrivals').innerHTML = newArr.map(p => buildProductCard(p)).join('');
+    });
+
+    function buildProductCard(p) {
+      const wishlisted = isWishlisted(p.id);
+      return `
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
+          <div class="product-card h-100">
+            <div class="card-img-wrapper">
+              <a href="pages/product-detail.html?id=${p.id}">
+                <img src="${p.images[0]}" alt="${p.name}" loading="lazy">
+              </a>
+              ${p.discount ? `<span class="badge-discount">-${p.discount}%</span>` : ''}
+              ${p.isNew ? `<span class="badge-new">NEW</span>` : ''}
+              <button class="wishlist-btn ${wishlisted ? 'active' : ''}" onclick="handleWishlist(event, ${p.id})">
+                <i class="${wishlisted ? 'fas' : 'far'} fa-heart"></i>
+              </button>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <div class="card-category">${p.category}</div>
+              <a href="pages/product-detail.html?id=${p.id}" class="text-decoration-none">
+                <div class="card-title">${p.name}</div>
+              </a>
+              <div class="rating">${renderStars(p.rating)} <span>(${p.reviews})</span></div>
+              <div class="price-section mt-auto">
+                <span class="price-current">${formatPrice(p.price)}</span>
+                ${p.originalPrice ? `<span class="price-original">${formatPrice(p.originalPrice)}</span>` : ''}
+              </div>
+              <button class="btn-cart mt-2" onclick='addToCart(${JSON.stringify(p)}, 1)'>
+                <i class="fas fa-cart-plus me-1"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>`;
+    }
+
+    function handleWishlist(e, productId) {
+      e.preventDefault(); e.stopPropagation();
+      const btn = e.currentTarget;
+      const isNow = toggleWishlist(productId);
+      btn.classList.toggle('active', isNow);
+      btn.querySelector('i').className = isNow ? 'fas fa-heart' : 'far fa-heart';
+    }
+  </script>
+</body>
+</html>

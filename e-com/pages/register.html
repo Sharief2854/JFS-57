@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account — ShopEase</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body style="background:linear-gradient(135deg,#ffeef8 0%,#fff 50%,var(--primary-light) 100%);">
+  <div class="toast-container position-fixed bottom-0 end-0 p-3" id="toastContainer"></div>
+
+  <div class="auth-wrapper">
+    <div class="auth-card">
+      <div class="auth-logo">Shop<span style="color:var(--secondary)">Ease</span></div>
+      <h4 class="auth-title">Create Account</h4>
+      <p class="auth-sub">Join us today and enjoy exclusive deals!</p>
+
+      <!-- Social Sign-up -->
+      <div class="social-login row g-2 mb-3">
+        <div class="col-6">
+          <button class="btn btn-outline-secondary w-100" onclick="showToast('Social signup coming soon!','info')">
+            <i class="fab fa-google me-2 text-danger"></i>Google
+          </button>
+        </div>
+        <div class="col-6">
+          <button class="btn btn-outline-secondary w-100" onclick="showToast('Social signup coming soon!','info')">
+            <i class="fab fa-facebook me-2" style="color:#1877f2;"></i>Facebook
+          </button>
+        </div>
+      </div>
+
+      <div class="divider">or register with email</div>
+
+      <form id="registerForm" novalidate>
+        <div class="mb-3">
+          <label class="form-label" for="regName">Full Name</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="fas fa-user text-muted"></i></span>
+            <input type="text" class="form-control" id="regName" placeholder="Rahul Sharma" autocomplete="name">
+          </div>
+          <div class="invalid-feedback" id="regName-feedback"></div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="regEmail">Email Address</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="fas fa-envelope text-muted"></i></span>
+            <input type="email" class="form-control" id="regEmail" placeholder="rahul@example.com" autocomplete="email">
+          </div>
+          <div class="invalid-feedback" id="regEmail-feedback"></div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="regPassword">Password</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="fas fa-lock text-muted"></i></span>
+            <input type="password" class="form-control" id="regPassword" placeholder="Min. 6 characters" autocomplete="new-password">
+            <button type="button" class="btn btn-outline-secondary toggle-pass" data-target="#regPassword">
+              <i class="fas fa-eye"></i>
+            </button>
+          </div>
+          <div class="invalid-feedback" id="regPassword-feedback"></div>
+          <!-- Password strength -->
+          <div class="mt-1" id="strengthBar" style="height:4px;border-radius:2px;background:var(--gray-200);overflow:hidden;">
+            <div id="strengthFill" style="height:100%;width:0;transition:width .3s,background .3s;border-radius:2px;"></div>
+          </div>
+          <div class="small mt-1" id="strengthLabel" style="color:var(--gray-600);"></div>
+        </div>
+        <div class="mb-4">
+          <label class="form-label" for="regConfirm">Confirm Password</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="fas fa-lock-open text-muted"></i></span>
+            <input type="password" class="form-control" id="regConfirm" placeholder="Re-enter password" autocomplete="new-password">
+            <button type="button" class="btn btn-outline-secondary toggle-pass" data-target="#regConfirm">
+              <i class="fas fa-eye"></i>
+            </button>
+          </div>
+          <div class="invalid-feedback" id="regConfirm-feedback"></div>
+        </div>
+
+        <div class="form-check mb-4">
+          <input class="form-check-input" type="checkbox" id="agreeTerms" required>
+          <label class="form-check-label small" for="agreeTerms">
+            I agree to the <a href="#" class="text-primary-custom">Terms of Service</a> and
+            <a href="#" class="text-primary-custom">Privacy Policy</a>
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary-custom w-100 py-2 fs-6" id="registerBtn">
+          Create Account <i class="fas fa-user-plus ms-1"></i>
+        </button>
+      </form>
+
+      <div class="text-center mt-4">
+        <span class="text-muted small">Already have an account? </span>
+        <a href="login.html" class="text-primary-custom fw-600 small">Sign in</a>
+      </div>
+
+      <div class="text-center mt-3">
+        <a href="../index.html" class="text-muted small">
+          <i class="fas fa-arrow-left me-1"></i>Back to Home
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/auth.js"></script>
+  <script>
+    // Password strength indicator
+    document.getElementById('regPassword')?.addEventListener('input', function() {
+      const val = this.value;
+      let score = 0;
+      if (val.length >= 8) score++;
+      if (/[A-Z]/.test(val)) score++;
+      if (/[0-9]/.test(val)) score++;
+      if (/[^A-Za-z0-9]/.test(val)) score++;
+      const labels = ['', 'Weak', 'Fair', 'Good', 'Strong'];
+      const colors = ['', '#e63946', '#fca311', '#4cc9f0', '#2dc653'];
+      const widths = ['0%', '25%', '50%', '75%', '100%'];
+      document.getElementById('strengthFill').style.width = widths[score];
+      document.getElementById('strengthFill').style.background = colors[score];
+      document.getElementById('strengthLabel').textContent = val ? `Password strength: ${labels[score]}` : '';
+      document.getElementById('strengthLabel').style.color = colors[score];
+    });
+
+    // Terms check
+    document.getElementById('registerForm').addEventListener('submit', function(e) {
+      if (!document.getElementById('agreeTerms').checked) {
+        e.stopImmediatePropagation();
+        showToast('Please accept the Terms of Service to continue', 'warning');
+        e.preventDefault();
+      }
+    }, true);
+  </script>
+</body>
+</html>

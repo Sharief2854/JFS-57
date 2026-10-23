@@ -1,0 +1,458 @@
+[
+  {
+    "id": 1,
+    "name": "Wireless Noise-Cancelling Headphones",
+    "category": "Electronics",
+    "price": 2499,
+    "originalPrice": 4999,
+    "discount": 50,
+    "rating": 4.5,
+    "reviews": 328,
+    "stock": 15,
+    "images": [
+      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500",
+      "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=500"
+    ],
+    "description": "Premium wireless headphones with active noise cancellation, 30-hour battery life, and crystal-clear audio. Perfect for music lovers and professionals.",
+    "tags": ["audio", "wireless", "bluetooth", "noise-cancelling"],
+    "featured": true,
+    "isNew": false
+  },
+  {
+    "id": 2,
+    "name": "Smart Watch Series X",
+    "category": "Electronics",
+    "price": 8999,
+    "originalPrice": 12999,
+    "discount": 31,
+    "rating": 4.3,
+    "reviews": 215,
+    "stock": 8,
+    "images": [
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500",
+      "https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=500"
+    ],
+    "description": "Stay connected and track your health with this feature-packed smartwatch. Includes heart rate monitor, GPS, sleep tracking, and 7-day battery life.",
+    "tags": ["smartwatch", "wearable", "fitness", "health"],
+    "featured": true,
+    "isNew": true
+  },
+  {
+    "id": 3,
+    "name": "4K Ultra HD Camera",
+    "category": "Electronics",
+    "price": 34999,
+    "originalPrice": 45000,
+    "discount": 22,
+    "rating": 4.7,
+    "reviews": 89,
+    "stock": 5,
+    "images": [
+      "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=500",
+      "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=500"
+    ],
+    "description": "Capture life's moments in stunning 4K resolution. Features a 24MP sensor, 5-axis image stabilization, and built-in Wi-Fi for instant sharing.",
+    "tags": ["camera", "photography", "4k", "mirrorless"],
+    "featured": false,
+    "isNew": true
+  },
+  {
+    "id": 4,
+    "name": "Mechanical Gaming Keyboard",
+    "category": "Electronics",
+    "price": 3499,
+    "originalPrice": 5999,
+    "discount": 42,
+    "rating": 4.6,
+    "reviews": 445,
+    "stock": 30,
+    "images": [
+      "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=500",
+      "https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=500"
+    ],
+    "description": "RGB mechanical keyboard with Cherry MX switches, customizable backlighting, dedicated media controls, and a durable aluminum frame.",
+    "tags": ["gaming", "keyboard", "mechanical", "rgb"],
+    "featured": false,
+    "isNew": false
+  },
+  {
+    "id": 5,
+    "name": "Bluetooth Portable Speaker",
+    "category": "Electronics",
+    "price": 1999,
+    "originalPrice": 2999,
+    "discount": 33,
+    "rating": 4.2,
+    "reviews": 567,
+    "stock": 50,
+    "images": [
+      "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=500",
+      "https://images.unsplash.com/photo-1545454675-3531b543be5d?w=500"
+    ],
+    "description": "Waterproof portable speaker with 360° sound, 20-hour playtime, and built-in microphone for hands-free calls.",
+    "tags": ["speaker", "bluetooth", "portable", "waterproof"],
+    "featured": true,
+    "isNew": false
+  },
+  {
+    "id": 6,
+    "name": "Men's Premium Cotton T-Shirt",
+    "category": "Clothing",
+    "price": 499,
+    "originalPrice": 999,
+    "discount": 50,
+    "rating": 4.1,
+    "reviews": 1024,
+    "stock": 200,
+    "images": [
+      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500",
+      "https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=500"
+    ],
+    "description": "Soft, breathable 100% cotton t-shirt available in multiple colors. Perfect for everyday casual wear.",
+    "tags": ["men", "t-shirt", "cotton", "casual"],
+    "featured": true,
+    "isNew": false
+  },
+  {
+    "id": 7,
+    "name": "Women's Floral Summer Dress",
+    "category": "Clothing",
+    "price": 1299,
+    "originalPrice": 2499,
+    "discount": 48,
+    "rating": 4.4,
+    "reviews": 763,
+    "stock": 75,
+    "images": [
+      "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500",
+      "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=500"
+    ],
+    "description": "Elegant floral print summer dress with a flattering A-line silhouette. Made from lightweight chiffon fabric.",
+    "tags": ["women", "dress", "summer", "floral"],
+    "featured": true,
+    "isNew": true
+  },
+  {
+    "id": 8,
+    "name": "Men's Running Sneakers",
+    "category": "Clothing",
+    "price": 2799,
+    "originalPrice": 4500,
+    "discount": 38,
+    "rating": 4.5,
+    "reviews": 482,
+    "stock": 40,
+    "images": [
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500",
+      "https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=500"
+    ],
+    "description": "High-performance running shoes with responsive cushioning, breathable mesh upper, and durable rubber outsole.",
+    "tags": ["shoes", "running", "sneakers", "sports"],
+    "featured": false,
+    "isNew": true
+  },
+  {
+    "id": 9,
+    "name": "Unisex Hoodie Sweatshirt",
+    "category": "Clothing",
+    "price": 899,
+    "originalPrice": 1799,
+    "discount": 50,
+    "rating": 4.3,
+    "reviews": 341,
+    "stock": 120,
+    "images": [
+      "https://images.unsplash.com/photo-1556821840-3a63f15732ce?w=500",
+      "https://images.unsplash.com/photo-1578681994506-b8f463449011?w=500"
+    ],
+    "description": "Cozy fleece-lined hoodie with kangaroo pocket and adjustable drawstring. Great for layering in cool weather.",
+    "tags": ["hoodie", "unisex", "casual", "fleece"],
+    "featured": false,
+    "isNew": false
+  },
+  {
+    "id": 10,
+    "name": "JavaScript: The Good Parts",
+    "category": "Books",
+    "price": 349,
+    "originalPrice": 599,
+    "discount": 42,
+    "rating": 4.8,
+    "reviews": 2341,
+    "stock": 500,
+    "images": [
+      "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=500",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500"
+    ],
+    "description": "A classic book by Douglas Crockford exploring the best features of JavaScript. Essential reading for every web developer.",
+    "tags": ["javascript", "programming", "web", "development"],
+    "featured": true,
+    "isNew": false
+  },
+  {
+    "id": 11,
+    "name": "Python Crash Course",
+    "category": "Books",
+    "price": 449,
+    "originalPrice": 799,
+    "discount": 44,
+    "rating": 4.7,
+    "reviews": 1876,
+    "stock": 300,
+    "images": [
+      "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=500",
+      "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=500"
+    ],
+    "description": "A hands-on, project-based introduction to programming in Python. Perfect for beginners wanting to learn fast.",
+    "tags": ["python", "programming", "beginner", "crash course"],
+    "featured": false,
+    "isNew": false
+  },
+  {
+    "id": 12,
+    "name": "The Alchemist",
+    "category": "Books",
+    "price": 199,
+    "originalPrice": 399,
+    "discount": 50,
+    "rating": 4.9,
+    "reviews": 5678,
+    "stock": 1000,
+    "images": [
+      "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=500",
+      "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=500"
+    ],
+    "description": "Paulo Coelho's masterpiece about following your dreams and the journey of self-discovery. A timeless bestseller.",
+    "tags": ["fiction", "novel", "bestseller", "inspirational"],
+    "featured": true,
+    "isNew": false
+  },
+  {
+    "id": 13,
+    "name": "Atomic Habits",
+    "category": "Books",
+    "price": 299,
+    "originalPrice": 499,
+    "discount": 40,
+    "rating": 4.8,
+    "reviews": 4321,
+    "stock": 800,
+    "images": [
+      "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=500",
+      "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=500"
+    ],
+    "description": "James Clear's revolutionary guide to building good habits and breaking bad ones using tiny changes for remarkable results.",
+    "tags": ["self-help", "habits", "productivity", "non-fiction"],
+    "featured": false,
+    "isNew": false
+  },
+  {
+    "id": 14,
+    "name": "Non-Stick Cookware Set",
+    "category": "Home & Kitchen",
+    "price": 2999,
+    "originalPrice": 5999,
+    "discount": 50,
+    "rating": 4.4,
+    "reviews": 892,
+    "stock": 45,
+    "images": [
+      "https://images.unsplash.com/photo-1584990347449-39178f7b4f1f?w=500",
+      "https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=500"
+    ],
+    "description": "10-piece non-stick cookware set with granite coating, heat-resistant handles, and compatibility with all cooktops including induction.",
+    "tags": ["cookware", "kitchen", "non-stick", "cooking"],
+    "featured": true,
+    "isNew": false
+  },
+  {
+    "id": 15,
+    "name": "Robot Vacuum Cleaner",
+    "category": "Home & Kitchen",
+    "price": 14999,
+    "originalPrice": 24999,
+    "discount": 40,
+    "rating": 4.3,
+    "reviews": 234,
+    "stock": 20,
+    "images": [
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500",
+      "https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?w=500"
+    ],
+    "description": "Smart robot vacuum with laser mapping, 3000Pa suction, auto-empty base, and app control. Works on all floor types.",
+    "tags": ["vacuum", "robot", "smart home", "cleaning"],
+    "featured": true,
+    "isNew": true
+  },
+  {
+    "id": 16,
+    "name": "Air Purifier with HEPA Filter",
+    "category": "Home & Kitchen",
+    "price": 8499,
+    "originalPrice": 12000,
+    "discount": 29,
+    "rating": 4.6,
+    "reviews": 412,
+    "stock": 35,
+    "images": [
+      "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=500",
+      "https://images.unsplash.com/photo-1558618047-3c8c76ca7e25?w=500"
+    ],
+    "description": "True HEPA air purifier that removes 99.97% of particles. Covers up to 400 sq ft, features auto mode and sleep mode.",
+    "tags": ["air purifier", "hepa", "home", "health"],
+    "featured": false,
+    "isNew": false
+  },
+  {
+    "id": 17,
+    "name": "Scented Soy Candle Set",
+    "category": "Home & Kitchen",
+    "price": 699,
+    "originalPrice": 999,
+    "discount": 30,
+    "rating": 4.5,
+    "reviews": 634,
+    "stock": 150,
+    "images": [
+      "https://images.unsplash.com/photo-1602028915047-37269d369887?w=500",
+      "https://images.unsplash.com/photo-1543361083-0c7fb6f8c22c?w=500"
+    ],
+    "description": "Set of 3 hand-poured soy wax candles in relaxing lavender, vanilla, and eucalyptus scents. 40+ hour burn time each.",
+    "tags": ["candle", "home decor", "aromatherapy", "gift"],
+    "featured": false,
+    "isNew": true
+  },
+  {
+    "id": 18,
+    "name": "Yoga Mat Premium",
+    "category": "Sports",
+    "price": 1199,
+    "originalPrice": 1999,
+    "discount": 40,
+    "rating": 4.6,
+    "reviews": 987,
+    "stock": 80,
+    "images": [
+      "https://images.unsplash.com/photo-1601925228602-5f8a8f6c5c8f?w=500",
+      "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=500"
+    ],
+    "description": "Extra-thick 6mm non-slip yoga mat with alignment lines, eco-friendly TPE material, and carrying strap included.",
+    "tags": ["yoga", "fitness", "mat", "exercise"],
+    "featured": true,
+    "isNew": false
+  },
+  {
+    "id": 19,
+    "name": "Adjustable Dumbbell Set",
+    "category": "Sports",
+    "price": 4999,
+    "originalPrice": 7999,
+    "discount": 37,
+    "rating": 4.7,
+    "reviews": 345,
+    "stock": 25,
+    "images": [
+      "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=500",
+      "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500"
+    ],
+    "description": "Adjustable dumbbells ranging from 5 to 52.5 lbs. Replaces 15 sets of weights. Quick-adjust dial mechanism.",
+    "tags": ["dumbbell", "weights", "gym", "fitness"],
+    "featured": true,
+    "isNew": false
+  },
+  {
+    "id": 20,
+    "name": "Resistance Bands Set",
+    "category": "Sports",
+    "price": 599,
+    "originalPrice": 999,
+    "discount": 40,
+    "rating": 4.4,
+    "reviews": 1234,
+    "stock": 200,
+    "images": [
+      "https://images.unsplash.com/photo-1598289431512-b97b0917affc?w=500",
+      "https://images.unsplash.com/photo-1517963628607-235ccdd5476c?w=500"
+    ],
+    "description": "Set of 5 resistance bands in different resistance levels. Includes door anchor, ankle straps, and carry bag.",
+    "tags": ["resistance bands", "workout", "fitness", "home gym"],
+    "featured": false,
+    "isNew": false
+  },
+  {
+    "id": 21,
+    "name": "Cycling Helmet Pro",
+    "category": "Sports",
+    "price": 1799,
+    "originalPrice": 2999,
+    "discount": 40,
+    "rating": 4.8,
+    "reviews": 278,
+    "stock": 60,
+    "images": [
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500",
+      "https://images.unsplash.com/photo-1591971662795-a6d6e3c0a3d0?w=500"
+    ],
+    "description": "Lightweight aerodynamic cycling helmet with MIPS technology, 19 vents, adjustable fit system, and removable visor.",
+    "tags": ["cycling", "helmet", "bike", "safety"],
+    "featured": false,
+    "isNew": false
+  },
+  {
+    "id": 22,
+    "name": "Wireless Earbuds Pro",
+    "category": "Electronics",
+    "price": 1899,
+    "originalPrice": 3499,
+    "discount": 46,
+    "rating": 4.4,
+    "reviews": 892,
+    "stock": 60,
+    "images": [
+      "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500",
+      "https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?w=500"
+    ],
+    "description": "True wireless earbuds with active noise cancellation, 8-hour battery (32 with case), IPX5 water resistance, and touch controls.",
+    "tags": ["earbuds", "wireless", "bluetooth", "tws"],
+    "featured": false,
+    "isNew": true
+  },
+  {
+    "id": 23,
+    "name": "LED Desk Lamp",
+    "category": "Home & Kitchen",
+    "price": 1299,
+    "originalPrice": 2199,
+    "discount": 41,
+    "rating": 4.5,
+    "reviews": 456,
+    "stock": 90,
+    "images": [
+      "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=500",
+      "https://images.unsplash.com/photo-1513506003901-1e6a35b6df43?w=500"
+    ],
+    "description": "Smart LED desk lamp with 5 color temperatures, 10 brightness levels, USB charging port, and touch-sensitive controls.",
+    "tags": ["lamp", "led", "desk", "office"],
+    "featured": false,
+    "isNew": false
+  },
+  {
+    "id": 24,
+    "name": "Clean Code Book",
+    "category": "Books",
+    "price": 549,
+    "originalPrice": 899,
+    "discount": 39,
+    "rating": 4.7,
+    "reviews": 3210,
+    "stock": 400,
+    "images": [
+      "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500",
+      "https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=500"
+    ],
+    "description": "Robert C. Martin's guide to writing clean, maintainable code. A must-read for every professional software developer.",
+    "tags": ["programming", "clean code", "software engineering", "best practices"],
+    "featured": false,
+    "isNew": false
+  }
+]

@@ -1,0 +1,13 @@
+.header{
+    text-align: center;
+    background-color: blue;
+    color: white;
+}
+
+.text-color-1{
+    color: green;
+}
+
+hr{
+    border-color: green;
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products — ShopEase</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .shimmer { animation: shimmer 1.5s infinite; background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%); background-size: 200% 100%; }
+    @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+    .mobile-filter-btn { display:none; }
+    @media(max-width:991px) { .mobile-filter-btn { display:flex; } .filter-sidebar { display:none; } .filter-sidebar.show { display:block; } }
+  </style>
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb-wrapper">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+          <li class="breadcrumb-item active">Products</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Search Banner -->
+  <div id="searchDisplay" class="bg-primary-light py-3 text-center" style="display:none!important;">
+    <div class="container">
+      <span class="text-primary-custom fw-600">Search results for: "<span id="searchTerm"></span>"</span>
+      <a href="products.html" class="btn btn-sm btn-outline-secondary ms-3">Clear search</a>
+    </div>
+  </div>
+
+  <div class="container py-4">
+    <div class="row g-4">
+
+      <!-- Sidebar Filters -->
+      <div class="col-lg-3">
+        <div class="d-flex justify-content-between align-items-center mb-3 d-lg-none">
+          <h6 class="mb-0 fw-700">Filters</h6>
+          <button class="btn btn-sm btn-outline-primary rounded-pill" onclick="toggleMobileFilters()">
+            <i class="fas fa-filter me-1"></i>Filters
+          </button>
+        </div>
+        <div class="filter-sidebar" id="filterSidebar">
+          <!-- Search in page -->
+          <div class="filter-card">
+            <div class="filter-title">Search</div>
+            <input type="search" class="form-control" id="inlineSearch" placeholder="Search products…">
+          </div>
+          <!-- Categories -->
+          <div class="filter-card">
+            <div class="filter-title">Category</div>
+            <div>
+              <span class="filter-chip" data-cat="Electronics"><i class="fas fa-mobile-alt me-1"></i>Electronics</span>
+              <span class="filter-chip" data-cat="Clothing"><i class="fas fa-tshirt me-1"></i>Clothing</span>
+              <span class="filter-chip" data-cat="Books"><i class="fas fa-book me-1"></i>Books</span>
+              <span class="filter-chip" data-cat="Home & Kitchen"><i class="fas fa-home me-1"></i>Home & Kitchen</span>
+              <span class="filter-chip" data-cat="Sports"><i class="fas fa-running me-1"></i>Sports</span>
+            </div>
+          </div>
+          <!-- Price Range -->
+          <div class="filter-card">
+            <div class="filter-title">Price Range</div>
+            <input type="range" class="form-range" id="priceRange" min="0" max="50000" step="100" value="50000">
+            <div class="d-flex justify-content-between small text-muted mt-1">
+              <span>₹0</span>
+              <span id="priceDisplay" class="fw-600 text-primary-custom">₹50,000</span>
+            </div>
+          </div>
+          <!-- Rating -->
+          <div class="filter-card">
+            <div class="filter-title">Minimum Rating</div>
+            <span class="filter-chip" data-rating="4.5">⭐ 4.5+</span>
+            <span class="filter-chip" data-rating="4">⭐ 4.0+</span>
+            <span class="filter-chip" data-rating="3">⭐ 3.0+</span>
+          </div>
+          <!-- Clear -->
+          <button class="btn btn-outline-danger w-100 rounded-pill" onclick="clearAllFilters()">
+            <i class="fas fa-times me-1"></i>Clear All Filters
+          </button>
+        </div>
+      </div>
+
+      <!-- Products Area -->
+      <div class="col-lg-9">
+        <!-- Toolbar -->
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-3">
+          <div>
+            <span class="fw-600" id="resultCount">Loading…</span>
+            <div id="activeFilters" class="mt-1 small"></div>
+          </div>
+          <select class="form-select form-select-sm w-auto" id="sortSelect">
+            <option value="default">Sort: Default</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="rating">Highest Rated</option>
+            <option value="newest">Newest First</option>
+            <option value="discount">Biggest Discount</option>
+          </select>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="row" id="productGrid"></div>
+
+        <!-- Pagination -->
+        <div id="pagination" class="mt-2"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/products.js"></script>
+  <script>
+    function toggleMobileFilters() {
+      document.getElementById('filterSidebar').classList.toggle('show');
+    }
+  </script>
+</body>
+</html>
